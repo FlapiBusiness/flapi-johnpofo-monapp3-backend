@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: prod-customerName-projectName-backend-deployment
-  namespace: prod-customerName-projectName-backend
+  name: prod-johnpofo-monapp3-backend-deployment
+  namespace: prod-johnpofo-monapp3-backend
   labels:
-    app: prod-customerName-projectName-backend
+    app: prod-johnpofo-monapp3-backend
 spec:
   replicas: 3
   strategy:
@@ -14,15 +14,15 @@ spec:
       maxSurge: 1
   selector:
     matchLabels:
-      app: prod-customerName-projectName-backend
+      app: prod-johnpofo-monapp3-backend
   template:
     metadata:
       labels:
-        app: prod-customerName-projectName-backend
+        app: prod-johnpofo-monapp3-backend
     spec:
       containers:
-        - name: prod-customerName-projectName-backend
-          image: corentin35/customerName-projectName-backend:${TAG_VERSION}
+        - name: prod-johnpofo-monapp3-backend
+          image: corentin35/johnpofo-monapp3-backend:${TAG_VERSION}
           imagePullPolicy: Always
           ports:
             - containerPort: 3333
